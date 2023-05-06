@@ -13,6 +13,7 @@
 		350A08C72A06580600C55723 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 350A08C52A06580600C55723 /* Main.storyboard */; };
 		350A08C92A06580800C55723 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 350A08C82A06580800C55723 /* Assets.xcassets */; };
 		350A08CC2A06580800C55723 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 350A08CA2A06580800C55723 /* LaunchScreen.storyboard */; };
+		350A08D72A06586600C55723 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350A08D62A06586600C55723 /* Character.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		350A08C82A06580800C55723 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		350A08CB2A06580800C55723 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		350A08CD2A06580800C55723 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		350A08D62A06586600C55723 /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +58,56 @@
 		350A08BE2A06580600C55723 /* HarryPotter-JSON */ = {
 			isa = PBXGroup;
 			children = (
-				350A08BF2A06580600C55723 /* AppDelegate.swift */,
-				350A08C12A06580600C55723 /* SceneDelegate.swift */,
-				350A08C32A06580600C55723 /* ViewController.swift */,
-				350A08C52A06580600C55723 /* Main.storyboard */,
-				350A08C82A06580800C55723 /* Assets.xcassets */,
-				350A08CA2A06580800C55723 /* LaunchScreen.storyboard */,
-				350A08CD2A06580800C55723 /* Info.plist */,
+				350A08D32A06583100C55723 /* App */,
+				350A08D42A06583A00C55723 /* ViewControllers */,
+				350A08D52A06584400C55723 /* Storyboards */,
+				350A08D92A06588E00C55723 /* Resources */,
+				350A08D82A06586F00C55723 /* Models */,
 			);
 			path = "HarryPotter-JSON";
+			sourceTree = "<group>";
+		};
+		350A08D32A06583100C55723 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				350A08BF2A06580600C55723 /* AppDelegate.swift */,
+				350A08C12A06580600C55723 /* SceneDelegate.swift */,
+				350A08CD2A06580800C55723 /* Info.plist */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		350A08D42A06583A00C55723 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				350A08C32A06580600C55723 /* ViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		350A08D52A06584400C55723 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				350A08C52A06580600C55723 /* Main.storyboard */,
+				350A08CA2A06580800C55723 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		350A08D82A06586F00C55723 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				350A08D62A06586600C55723 /* Character.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		350A08D92A06588E00C55723 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				350A08C82A06580800C55723 /* Assets.xcassets */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,6 +184,7 @@
 				350A08C42A06580600C55723 /* ViewController.swift in Sources */,
 				350A08C02A06580600C55723 /* AppDelegate.swift in Sources */,
 				350A08C22A06580600C55723 /* SceneDelegate.swift in Sources */,
+				350A08D72A06586600C55723 /* Character.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,12 +333,12 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = XZW4VA4NWF;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "HarryPotter-JSON/Info.plist";
+				INFOPLIST_FILE = "HarryPotter-JSON/App/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -302,9 +346,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "kz.zaki.HarryPotter-JSON";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -317,12 +364,12 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = XZW4VA4NWF;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "HarryPotter-JSON/Info.plist";
+				INFOPLIST_FILE = "HarryPotter-JSON/App/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -330,9 +377,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "kz.zaki.HarryPotter-JSON";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
