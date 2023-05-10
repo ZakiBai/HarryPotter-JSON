@@ -12,9 +12,9 @@ struct Character: Decodable {
     let yearOfBirth: Int?
     let wizard: Bool
     let eyeColour: String
-    let alternate_names: [String]?
+    let alternateNames: [String]?
     let wand: Wand?
-    let image: String? // Если ставлю класс URL почему то выдает ошибку(
+    let image: String
 }
 
 struct Wand: Decodable {

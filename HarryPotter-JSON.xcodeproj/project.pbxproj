@@ -9,23 +9,29 @@
 /* Begin PBXBuildFile section */
 		350A08C02A06580600C55723 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350A08BF2A06580600C55723 /* AppDelegate.swift */; };
 		350A08C22A06580600C55723 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350A08C12A06580600C55723 /* SceneDelegate.swift */; };
-		350A08C42A06580600C55723 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350A08C32A06580600C55723 /* ViewController.swift */; };
+		350A08C42A06580600C55723 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350A08C32A06580600C55723 /* MainViewController.swift */; };
 		350A08C72A06580600C55723 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 350A08C52A06580600C55723 /* Main.storyboard */; };
 		350A08C92A06580800C55723 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 350A08C82A06580800C55723 /* Assets.xcassets */; };
 		350A08CC2A06580800C55723 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 350A08CA2A06580800C55723 /* LaunchScreen.storyboard */; };
 		350A08D72A06586600C55723 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350A08D62A06586600C55723 /* Character.swift */; };
+		35B0D1452A0B8DCB000CFAC5 /* CharacterInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35B0D1442A0B8DCB000CFAC5 /* CharacterInfoCell.swift */; };
+		35B0D1482A0B902D000CFAC5 /* AllCharactersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35B0D1472A0B902D000CFAC5 /* AllCharactersTableViewController.swift */; };
+		35B0D14A2A0BA6F5000CFAC5 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35B0D1492A0BA6F5000CFAC5 /* NetworkManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		350A08BC2A06580600C55723 /* HarryPotter-JSON.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HarryPotter-JSON.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		350A08BF2A06580600C55723 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		350A08C12A06580600C55723 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		350A08C32A06580600C55723 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		350A08C32A06580600C55723 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		350A08C62A06580600C55723 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		350A08C82A06580800C55723 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		350A08CB2A06580800C55723 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		350A08CD2A06580800C55723 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		350A08D62A06586600C55723 /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
+		35B0D1442A0B8DCB000CFAC5 /* CharacterInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterInfoCell.swift; sourceTree = "<group>"; };
+		35B0D1472A0B902D000CFAC5 /* AllCharactersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllCharactersTableViewController.swift; sourceTree = "<group>"; };
+		35B0D1492A0BA6F5000CFAC5 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +69,8 @@
 				350A08D52A06584400C55723 /* Storyboards */,
 				350A08D92A06588E00C55723 /* Resources */,
 				350A08D82A06586F00C55723 /* Models */,
+				35B0D1462A0B8DD0000CFAC5 /* Views */,
+				35B0D14B2A0BA6FE000CFAC5 /* Services */,
 			);
 			path = "HarryPotter-JSON";
 			sourceTree = "<group>";
@@ -80,7 +88,8 @@
 		350A08D42A06583A00C55723 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				350A08C32A06580600C55723 /* ViewController.swift */,
+				350A08C32A06580600C55723 /* MainViewController.swift */,
+				35B0D1472A0B902D000CFAC5 /* AllCharactersTableViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -108,6 +117,22 @@
 				350A08C82A06580800C55723 /* Assets.xcassets */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		35B0D1462A0B8DD0000CFAC5 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				35B0D1442A0B8DCB000CFAC5 /* CharacterInfoCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		35B0D14B2A0BA6FE000CFAC5 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				35B0D1492A0BA6F5000CFAC5 /* NetworkManager.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -181,10 +206,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				350A08C42A06580600C55723 /* ViewController.swift in Sources */,
+				35B0D1452A0B8DCB000CFAC5 /* CharacterInfoCell.swift in Sources */,
+				350A08C42A06580600C55723 /* MainViewController.swift in Sources */,
 				350A08C02A06580600C55723 /* AppDelegate.swift in Sources */,
+				35B0D14A2A0BA6F5000CFAC5 /* NetworkManager.swift in Sources */,
 				350A08C22A06580600C55723 /* SceneDelegate.swift in Sources */,
 				350A08D72A06586600C55723 /* Character.swift in Sources */,
+				35B0D1482A0B902D000CFAC5 /* AllCharactersTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,24 +1,171 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="e74-jT-BNf">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Main View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="HarryPotter_JSON" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Exb-el-YM9">
+                                <rect key="frame" x="91.666666666666686" y="402" width="210" height="48"/>
+                                <color key="backgroundColor" systemColor="linkColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="210" id="Jlj-Bb-i8V"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="30"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="All Characters">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="allCharactersButtonTapped" destination="BYZ-38-t0r" eventType="touchUpInside" id="vtM-QA-kBr"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Exb-el-YM9" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="7H5-7m-f49"/>
+                            <constraint firstItem="Exb-el-YM9" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="dlv-RG-TBr"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="jbL-Vw-W2k"/>
+                    <connections>
+                        <segue destination="1Fi-p1-rqX" kind="show" identifier="showCharacters" id="o8E-dO-AMH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1008.3969465648854" y="-2.1126760563380285"/>
+        </scene>
+        <!--List of Characters-->
+        <scene sceneID="hhj-3V-sY1">
+            <objects>
+                <tableViewController id="1Fi-p1-rqX" customClass="AllCharactersTableViewController" customModule="HarryPotter_JSON" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="QlN-MA-oAo">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="infoCell" rowHeight="178" id="MOt-FQ-uRx" customClass="CharacterInfoCell" customModule="HarryPotter_JSON" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="50" width="393" height="178"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="MOt-FQ-uRx" id="fzB-M8-ONG">
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="178"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="L4T-U7-GTN">
+                                            <rect key="frame" x="16" y="5" width="139" height="168"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="167" id="P0A-07-5Yf"/>
+                                                <constraint firstAttribute="width" constant="139" id="seD-Uv-AxE"/>
+                                            </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                    <integer key="value" value="10"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </imageView>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="72p-qy-FqZ">
+                                            <rect key="frame" x="175" y="11" width="198" height="156"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name: Harry" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OOT-Bz-rkw">
+                                                    <rect key="frame" x="0.0" y="0.0" width="96.333333333333329" height="33"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DateOfBirth: 1980" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2qz-V9-Cqg">
+                                                    <rect key="frame" x="0.0" y="41" width="138" height="33"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Color of eye: brown" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="idb-Lv-mjA">
+                                                    <rect key="frame" x="0.0" y="82" width="148.33333333333334" height="33"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wand char: " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4xm-so-6vt">
+                                                    <rect key="frame" x="0.0" y="123" width="90.666666666666671" height="33"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="72p-qy-FqZ" firstAttribute="top" secondItem="fzB-M8-ONG" secondAttribute="topMargin" id="3PZ-uC-8xG"/>
+                                        <constraint firstItem="72p-qy-FqZ" firstAttribute="leading" secondItem="L4T-U7-GTN" secondAttribute="trailing" constant="20" id="9Vl-ip-seI"/>
+                                        <constraint firstItem="L4T-U7-GTN" firstAttribute="top" secondItem="fzB-M8-ONG" secondAttribute="top" constant="5" id="GdZ-KF-riN"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="72p-qy-FqZ" secondAttribute="trailing" id="Jkc-K6-wxC"/>
+                                        <constraint firstItem="L4T-U7-GTN" firstAttribute="leading" secondItem="fzB-M8-ONG" secondAttribute="leading" constant="16" id="o0Z-9j-jM5"/>
+                                        <constraint firstAttribute="bottom" secondItem="L4T-U7-GTN" secondAttribute="bottom" constant="5" id="sgy-l0-xML"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="72p-qy-FqZ" secondAttribute="bottom" id="vGB-5R-5d8"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="charColorOfEye" destination="idb-Lv-mjA" id="rKi-rB-n3G"/>
+                                    <outlet property="charImage" destination="L4T-U7-GTN" id="CwR-TU-qcm"/>
+                                    <outlet property="charNameLabel" destination="OOT-Bz-rkw" id="H5V-Bl-i3T"/>
+                                    <outlet property="charWandLabel" destination="4xm-so-6vt" id="fKK-3k-tUd"/>
+                                    <outlet property="charYearOfBirthLabel" destination="2qz-V9-Cqg" id="cYP-LS-FPQ"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="1Fi-p1-rqX" id="FcN-fg-rmX"/>
+                            <outlet property="delegate" destination="1Fi-p1-rqX" id="Oph-mV-Btf"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="List of Characters" id="U7B-LR-IzF"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zCK-9Y-m2O" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1878.6259541984732" y="-2.1126760563380285"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="lWQ-he-qdP">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="e74-jT-BNf" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="XUc-Ya-4lC">
+                        <rect key="frame" x="0.0" y="59" width="393" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="DqV-eZ-qOO"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zXa-oG-QYq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="155" y="-2"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="linkColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
