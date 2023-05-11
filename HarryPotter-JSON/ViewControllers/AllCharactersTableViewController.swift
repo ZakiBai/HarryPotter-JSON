@@ -17,6 +17,7 @@ final class AllCharactersTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.rowHeight = 170
+       
     }
 
     // MARK: - Table view data source
@@ -40,30 +41,15 @@ final class AllCharactersTableViewController: UITableViewController {
 extension AllCharactersTableViewController {
     
     func fetchCharacters() {
-        networkManager.fetchCharacters(from: networkManager.link) { [weak self] result in
+        networkManager.fetchCharacters(from: Link.characterURL.url) { [weak self] result in
             switch result {
             case .success(let dataCharacters):
                 self?.characters = dataCharacters
+                self?.tableView.reloadData()
             case .failure(let error):
                 print(error)
             }
         }
-        
-//        URLSession.shared.dataTask(with: networkManager.link) { [weak self] data, _, error in
-//            guard let data else {
-//                print(error?.localizedDescription ?? "No error description")
-//                return
-//            }
-//            do {
-//                let decoder = JSONDecoder()
-//                decoder.keyDecodingStrategy = .convertFromSnakeCase
-//                self?.characters = try decoder.decode([Character].self, from: data)
-//                DispatchQueue.main.async {
-//                    self?.tableView.reloadData()
-//                }
-//            } catch {
-//                print(error)
-//            }
-//        }.resume()
+
     }
 }

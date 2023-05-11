@@ -7,6 +7,17 @@
 
 import Foundation
 
+enum Link {
+    case characterURL
+    
+    var url: URL {
+        switch self {
+        case .characterURL:
+            return URL(string: "https://hp-api.onrender.com/api/characters")!
+        }
+    }
+}
+
 enum NetworkError: Error {
     case invalidURL
     case noData
@@ -14,7 +25,7 @@ enum NetworkError: Error {
 }
 
 final class NetworkManager {
-    let link = URL(string: "https://hp-api.onrender.com/api/characters")!
+
     static let shared = NetworkManager()
     private init() {}
     
