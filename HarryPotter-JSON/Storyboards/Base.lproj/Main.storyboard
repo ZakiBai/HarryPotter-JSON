@@ -85,7 +85,7 @@
                                             <rect key="frame" x="175" y="11" width="198" height="156"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name: Harry" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OOT-Bz-rkw">
-                                                    <rect key="frame" x="0.0" y="0.0" width="96.333333333333329" height="33"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="198" height="33"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -103,12 +103,18 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wand char: " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4xm-so-6vt">
-                                                    <rect key="frame" x="0.0" y="123" width="90.666666666666671" height="33"/>
+                                                    <rect key="frame" x="0.0" y="123" width="198" height="33"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="OOT-Bz-rkw" secondAttribute="trailing" id="2tw-QU-y1q"/>
+                                                <constraint firstAttribute="trailing" secondItem="4xm-so-6vt" secondAttribute="trailing" id="H9u-GF-kdW"/>
+                                                <constraint firstItem="OOT-Bz-rkw" firstAttribute="leading" secondItem="72p-qy-FqZ" secondAttribute="leading" id="N9C-pn-NvK"/>
+                                                <constraint firstItem="4xm-so-6vt" firstAttribute="leading" secondItem="72p-qy-FqZ" secondAttribute="leading" id="wkd-mG-yM6"/>
+                                            </constraints>
                                         </stackView>
                                     </subviews>
                                     <constraints>
