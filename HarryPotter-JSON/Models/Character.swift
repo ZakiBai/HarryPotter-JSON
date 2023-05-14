@@ -47,4 +47,18 @@ struct Wand: Decodable {
     let wood: String
     let core: String
     let length: Double?
+    
+    init(wood: String, core: String, length: Double?) {
+        self.wood = wood
+        self.core = core
+        self.length = length
+    }
+    
+    init(from characterWand: [String: Any]) {
+        wood = characterWand["wood"] as? String ?? ""
+        core = characterWand["core"] as? String ?? ""
+        length = characterWand["length"] as? Double
+     }
+    
+    
 }
