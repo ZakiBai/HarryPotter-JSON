@@ -9,7 +9,6 @@ import UIKit
 
 final class MainViewController: UIViewController {
   
-
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showCharacters" {
             guard let allCharactersVC = segue.destination as? AllCharactersTableViewController else { return }

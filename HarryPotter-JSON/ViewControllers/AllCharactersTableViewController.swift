@@ -42,15 +42,6 @@ final class AllCharactersTableViewController: UITableViewController {
 extension AllCharactersTableViewController {
     
     func fetchCharacters() {
-//        networkManager.fetchCharacters(from: Link.characterURL.url) { [weak self] result in
-//            switch result {
-//            case .success(let dataCharacters):
-//                self?.characters = dataCharacters
-//                self?.tableView.reloadData()
-//            case .failure(let error):
-//                print(error)
-//            }
-//        }
         networkManager.fetchCharacters(from: Link.characterURL.url) { [weak self] result in
             switch result {
             case .success(let charactersData):

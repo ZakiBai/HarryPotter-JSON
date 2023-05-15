@@ -25,15 +25,6 @@ final class CharacterInfoCell: UITableViewCell {
         
         guard let url = URL(string: character.image) else { return }
     
-//        networkManager.fetchImage(from: url) { [weak self] result in
-//            switch result {
-//            case .success(let imageData):
-//                self?.charImage.image = UIImage(data: imageData)
-//            case .failure(let error):
-//                print(error)
-//            }
-//        }
-        
         networkManager.fetchData(from: url) { [weak self] result in
             switch result {
             case .success(let imageData):
