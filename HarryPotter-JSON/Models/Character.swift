@@ -15,16 +15,6 @@ struct Character: Decodable {
     let alternateNames: [String]?
     let wand: Wand?
     let image: String
-    
-    init(name: String, yearOfBirth: Int?, wizard: Bool, eyeColour: String, alternateNames: [String]?, wand: Wand?, image: String) {
-        self.name = name
-        self.yearOfBirth = yearOfBirth
-        self.wizard = wizard
-        self.eyeColour = eyeColour
-        self.alternateNames = alternateNames
-        self.wand = wand
-        self.image = image
-    }
  
     init(from characterData: [String: Any]) {
         name = characterData["name"] as? String ?? ""
@@ -32,7 +22,8 @@ struct Character: Decodable {
         wizard = characterData["wizard"] as? Bool ?? false
         eyeColour = characterData["eyeColour"] as? String ?? ""
         alternateNames = characterData["alternateNames"] as? [String]
-        wand = characterData["wand"] as? Wand
+        let wandStick = characterData["wand"] as? [String: Any] ?? [:]
+        wand = Wand(from: wandStick)
         image = characterData["image"] as? String ?? ""
     }
     

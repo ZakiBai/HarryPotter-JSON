@@ -25,40 +25,6 @@ final class NetworkManager {
     static let shared = NetworkManager()
     private init() {}
     
-//    func fetchImage(from url: URL, completion: @escaping (Result<Data, NetworkError>) -> Void) {
-//        DispatchQueue.global().async {
-//            guard let imageData = try? Data(contentsOf: url) else {
-//                completion(.failure(.noData))
-//                return
-//            }
-//            DispatchQueue.main.async {
-//                completion(.success(imageData))
-//            }
-//        }
-//    }
-//
-//    func fetchCharacters(from url: URL, completion: @escaping (Result <[Character], NetworkError>) -> Void) {
-//        URLSession.shared.dataTask(with: url) { data, _, error in
-//            guard let data else {
-//                completion(.failure(.noData))
-//                print(error?.localizedDescription ?? "No error description")
-//                return
-//            }
-//
-//            do {
-//                let decoder = JSONDecoder()
-//                decoder.keyDecodingStrategy = .convertFromSnakeCase
-//                let dataModel = try decoder.decode([Character].self, from: data)
-//                DispatchQueue.main.async {
-//                    completion(.success(dataModel))
-//                }
-//            } catch {
-//                completion(.failure(.decodingError))
-//            }
-//        }.resume()
-//    }
-    
-    
     func fetchCharacters(from url: URL, completion: @escaping (Result<[Character], AFError>) -> Void) {
         AF.request(url)
             .validate()
